@@ -1,5 +1,5 @@
-[!IMPORTANT]
-** Beolvassuk a labirintust egy mátrixba. Aztán először megkellene keresni (párhuzamosan persze) az összes lehetséges valid utat ami vezet a labirintus bemeneti pontjától a kimeneti pontig. Aztán ezeket az utakat valamilyen formában belerakni egy "Gráf" adatszerkezetbe és elsütni rajta a BFS-t. **
+> [!IMPORTANT]
+> **Beolvassuk a labirintust egy mátrixba. Aztán először megkellene keresni (párhuzamosan persze) az összes lehetséges valid utat ami vezet a labirintus bemeneti pontjától > a kimeneti pontig. Aztán ezeket az utakat valamilyen formában belerakni egy "Gráf" adatszerkezetbe és elsütni rajta a BFS-t.**
 
 # 18. Path finding in a Maze (70%+)
 
@@ -31,10 +31,10 @@ Adatszerkezetek és memória-hozzáférés optimalizálása dinamikus vagy több
 CUDA megoldások az SSSP problémára
 A* keresési algoritmus - Wikipédia
 
-[!NOTE]
-## +Feladatok
-- 3D-s vizualizáció (?%)
-- Algoritmusok párhuzamos összehasonlítása (?%)
+> [!NOTE]
+> ## +Feladatok
+> - 3D-s vizualizáció (?%)
+> - Algoritmusok párhuzamos összehasonlítása (?%)
 
 ## Terv:
 Nyelv: CUDA
