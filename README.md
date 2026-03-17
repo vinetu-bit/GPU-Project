@@ -12,7 +12,8 @@ Párhuzamos szélességi keresés (BFS) vagy Dijkstra algoritmus megvalósítás
 - Párhuzamos BFS vagy Dijkstra algoritmus megvalósítása a GPU-n: (30%)
 Hullámfront-kiterjesztés hatékony kezelése a GPU-n: (20%)
 A megtalált útvonal valós idejű vizualizációja: (20%)
-[0% interoperáció és memóriamegosztás nélkül]
+> [!WARNING]
+> **[0% interoperáció és memóriamegosztás nélkül]**
 
 ## Középhaladó:
 - Hajlékonyabb útkereső algoritmusok, például A* keresés kezelése vagy párhuzamos labirintusgeneráló algoritmusok feltárása (pl. Kruskal vagy Prim algoritmusa minimális feszítőfákhoz, labirintusokhoz adaptálva). Ez magában foglalná a nyitott és zárt listák hatékony kezelését a GPU-n, és potenciálisan a szabálytalan gráfstruktúrák kezelését.
