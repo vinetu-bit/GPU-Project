@@ -1,13 +1,10 @@
 cmake_minimum_required(VERSION 4.3)
 
-project(GPU-Project VERSION 1.0 LANGUAGES CXX)
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+project(GPU-Project VERSION 1.0 LANGUAGES CUDA)
 
 include_directories(include)
 
-file(GLOB SOURCES "src/*.cpp")
+file(GLOB SOURCES "src/*.cu")
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
