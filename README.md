@@ -1,3 +1,15 @@
+> [!NOTE]
+> ## **CMake  használata:**
+> 1. Töltsd le a CMakeLists.txt file-t a mappába amiben dolgozni fogsz.
+> 2. Futtasd az alábbi parancsokat:
+> ```
+> mkdir build
+> cd build
+> cmake ..
+> ```
+> 3. Kész!
+
+
 > [!IMPORTANT]
 > **Beolvassuk a labirintust egy mátrixba.  Aztán ezeket az utakat valamilyen formában belerakni egy "Gráf" adatszerkezetbe és elsütni rajta a BFS-t.**
 
