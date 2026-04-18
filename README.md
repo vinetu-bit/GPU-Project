@@ -57,7 +57,7 @@ Struct elemei: Távolság(d), Szülő(p)
 
 ## Kérdések: 
 Mi a fasz az a hullámfront?
-Lehet-e ugyanolyan hosszúságú utaknak más súlya?
+Lehet-e ugyanolyan hosszúságú utaknak más súlya? - Válasz: Tőlünk függ
 
 <!-- 22. Parallel Sorting Algorithms on the GPU (up to 95%)
 
