@@ -54,10 +54,9 @@ Adatszerkezet: Mátrix(struct-ok mátrixa) ahol van csúcs az struct ahol nincs 
 Algoritmus: BFS (Később lehet dijkstra lesz belőle)
 Struct elemei: Távolság(d), Szülő(p)
 
-
-## Kérdések: 
-Mi a fasz az a hullámfront?
-Lehet-e ugyanolyan hosszúságú utaknak más súlya? - Válasz: Tőlünk függ
+[!NOTE]
+>Hullámfront segédlet: https://en.wikipedia.org/wiki/Wavefront_expansion_algorithm
+>Lehet-e ugyanolyan hosszúságú utaknak más súlya? - Válasz: Tőlünk függ.
 
 <!-- 22. Parallel Sorting Algorithms on the GPU (up to 95%)
 
