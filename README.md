@@ -9,10 +9,6 @@
 > ```
 > 3. Kész!
 
-
-> [!IMPORTANT]
-> **Beolvassuk a labirintust egy mátrixba.  Aztán ezeket az utakat valamilyen formában belerakni egy "Gráf" adatszerkezetbe és elsütni rajta a BFS-t.**
-
 # 18. Path finding in a Maze (70%+)
 
 ## Feladat:
@@ -28,7 +24,7 @@ A megtalált útvonal valós idejű vizualizációja: (20%)
 > **[0% interoperáció és memóriamegosztás nélkül]**
 
 ## Középhaladó:
-- Hajlékonyabb útkereső algoritmusok, például A* keresés kezelése vagy párhuzamos labirintusgeneráló algoritmusok feltárása (pl. Kruskal vagy Prim algoritmusa minimális feszítőfákhoz, labirintusokhoz adaptálva). Ez magában foglalná a nyitott és zárt listák hatékony kezelését a GPU-n, és potenciálisan a szabálytalan gráfstruktúrák kezelését.
+- Hatékonyabb útkereső algoritmusok, például A* keresés kezelése vagy párhuzamos labirintusgeneráló algoritmusok feltárása (pl. Kruskal vagy Prim algoritmusa minimális feszítőfákhoz, labirintusokhoz adaptálva). Ez magában foglalná a nyitott és zárt listák hatékony kezelését a GPU-n, és potenciálisan a szabálytalan gráfstruktúrák kezelését.
 A* keresés megvalósítása a GPU-n: (+20%)
 Párhuzamos labirintusgeneráló algoritmus (pl. Kruskal vagy Prim) megvalósítása: (+10%)
 
@@ -48,15 +44,9 @@ A* keresési algoritmus - Wikipédia
 > - 3D-s vizualizáció (?%)
 > - Algoritmusok párhuzamos összehasonlítása (?%)
 
-## Terv:
-Nyelv: CUDA
-Adatszerkezet: Mátrix(struct-ok mátrixa) ahol van csúcs az struct ahol nincs az nullptr
-Algoritmus: BFS (Később lehet dijkstra lesz belőle)
-Struct elemei: Távolság(d), Szülő(p)
-
 >[!NOTE]
->Hullámfront segédlet: https://en.wikipedia.org/wiki/Wavefront_expansion_algorithm
->Lehet-e ugyanolyan hosszúságú utaknak más súlya? - Válasz: Tőlünk függ.
+>- Hullámfront segédlet: https://en.wikipedia.org/wiki/Wavefront_expansion_algorithm
+>- Lehet-e ugyanolyan hosszúságú utaknak más súlya? - Válasz: Tőlünk függ.
 
 <!-- 22. Parallel Sorting Algorithms on the GPU (up to 95%)
 
