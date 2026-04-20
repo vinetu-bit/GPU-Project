@@ -1,50 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <climits>
+#include "../include/bfs_help_functions.h"
 
 // Kernel deklarálás
 __global__ void kernel(int* frontier, int* visited, int* cost, int* adj_list, int V, int* neighbor_sizes);
-
-// Segéd fv. cpu_bfs-hez
-bool all_false(const std::vector<int>& v) {
-    for(auto element : v) {
-        if(element) {
-            return false;
-        }
-    }
-    return true;
-}
-
-// CPU-s implementáció benchmark-hoz
-std::vector<int> cpu_bfs(const std::vector<std::vector<int>>& adj_list, int source_vertex) {
-    // Csúcsok száma a gráfban (Hány olyan "kocka" van a labirintusban ami nem fal)
-    const int V = adj_list.size();
-
-    // Segéd vektorok definiálása
-    std::vector<int> frontier = std::vector<int>(V, false);
-    std::vector<int> visited = std::vector<int>(V, false);
-    std::vector<int> cost = std::vector<int>(V, INT_MAX);
-
-    // Algoritmus
-    frontier[source_vertex] = true;
-    cost[source_vertex] = 0;
-    while (!all_false(frontier)) {
-        for(int i = 0; i < V; i++) {
-            if(frontier[i]) {
-                frontier[i] = false;
-                visited[i] = true;
-                const int neighbor_size = adj_list[i].size();
-                for(int j = 0; j < neighbor_size; j++) {
-                    if(!visited[adj_list[i][j]]) {
-                        cost[adj_list[i][j]] = cost[i] + 1;
-                        frontier[adj_list[i][j]] = true;
-                    }
-                }
-            }
-        }
-    }
-    return cost;
-}
 
 std::vector<int> gpu_bfs(const std::vector<std::vector<int>>& adj_list, int source_vertex) {
     // Csúcsok száma a gráfban
@@ -106,10 +66,26 @@ std::vector<int> gpu_bfs(const std::vector<std::vector<int>>& adj_list, int sour
 }
 
 // Majd lesz normális teszt is
+// Példa input-ra: (1-es jelöli az utat 0-ás a falat)
+// [
+// 0 0 0 0 0
+// 1 1 0 1 0
+// 0 1 1 1 0
+// 0 1 0 0 0
+// ]
 int main() {
-    std::vector<std::vector<int>> graph = {{1,4},{0,2,4,6},{1,3},{2,4},{1,3},{0,6},{1,5}};
-    std::vector<int> cpu_result = cpu_bfs(graph, 0);
-    std::vector<int> gpu_result = gpu_bfs(graph, 0);
+    std::vector<std::vector<int>> labyrinth = {{0,0,0,0,0},{1,1,0,1,0},{0,1,1,1,0},{0,1,0,0,0}};
+    std::vector<std::vector<int>> converted_graph = convert_to_adj_list(labyrinth);
+
+    for(auto row : converted_graph) {
+        for(auto element : row) {
+            std::cout << element << " ";
+        }
+        std::cout << std::endl;
+    }
+
+    std::vector<int> cpu_result = cpu_bfs(converted_graph, 0);
+    std::vector<int> gpu_result = gpu_bfs(converted_graph, 0);
 
     std::cout << "CPU - Results: " << std::endl;
     for(auto element : cpu_result) {
@@ -120,3 +96,5 @@ int main() {
         std::cout << element << std::endl;
     }
 }
+// TODO valahogy a BFS eredményét lefordítani koordinátákra, hogy megmondjuk mely "négyzeteken" keresztül vezet
+// az út a labirintusban.
