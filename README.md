@@ -54,7 +54,7 @@ Adatszerkezet: Mátrix(struct-ok mátrixa) ahol van csúcs az struct ahol nincs 
 Algoritmus: BFS (Később lehet dijkstra lesz belőle)
 Struct elemei: Távolság(d), Szülő(p)
 
-[!NOTE]
+>[!NOTE]
 >Hullámfront segédlet: https://en.wikipedia.org/wiki/Wavefront_expansion_algorithm
 >Lehet-e ugyanolyan hosszúságú utaknak más súlya? - Válasz: Tőlünk függ.
 
